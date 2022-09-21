@@ -45,8 +45,8 @@ If you input only picture, then it will completely satisfy the HSV range [0, 0, 
 
     transform.img_prep(frame)
 
-.. image:: ./Images/1.png
-    :width: 500px
+.. image:: ./docs/Images/img_prep/1.png
+    :width: 700px
     :align: center
     :alt: Full HSV range
 
@@ -59,8 +59,8 @@ By changing the range of the frame for the filter, you can choose which part of 
     transform.img_prep(frame, (100, 0, 0), (255, 255, 255))
     transform.img_prep(frame, (0, 100, 100), (155, 255, 255))
 
-.. image:: ./Images/2.png
-    :width: 500px
+.. image:: ./docs/Images/img_prep/2.png
+    :width: 700px
     :align: center
     :alt: Part of the HSV range
 
@@ -73,8 +73,8 @@ By increasing the blur strength, you can achieve smoother borders and remove noi
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 0, 0)
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 0, 10)
 
-.. image:: ./Images/3.png
-    :width: 500px
+.. image:: ./docs/Images/img_prep/3.png
+    :width: 700px
     :align: center
     :alt: Blur strength
 
@@ -88,8 +88,8 @@ By increasing the number of iterations, you can close badly visible contours
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 1, 0)
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 5, 0)
 
-.. image:: ./Images/4.png
-    :width: 500px
+.. image:: ./docs/Images/img_prep/4.png
+    :width: 700px
     :align: center
     :alt: Iterations
 
