@@ -15,7 +15,6 @@ except FileNotFoundError:
     LONG_DESCRIPTION = SHORT_DESCRIPTION
 
 setup(install_requires=[
-    "setuptools==65.3.0",
     "opencv-python==4.6.0.66",
     "numpy==1.23.3",
 ],
