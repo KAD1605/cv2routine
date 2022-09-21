@@ -15,8 +15,8 @@ except FileNotFoundError:
     LONG_DESCRIPTION = SHORT_DESCRIPTION
 
 setup(install_requires=[
-    "opencv-python==4.6.0.66",
-    "numpy==1.23.3",
+    "opencv-python",
+    "numpy",
 ],
     name='cv2routine',
     version='0.0.2',
