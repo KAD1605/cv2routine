@@ -1,12 +1,13 @@
 import cv2
 import numpy as np
-import cv2routine.transform
+import transform
 
 from typing import Tuple
 
 
-def draw_rect_frame(img: np.array, lower: Tuple[int, int, int], upper: Tuple[int, int, int], label: str = "",
-                    iterations: int = 1, blur_strength: int = 5, min_area: int = 1000, only_max: bool = False,
+def draw_rect_frame(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0),
+                    upper: Tuple[int, int, int] = (255, 255, 255), label: str = "",
+                    iterations: int = 1, blur_strength: int = 0, min_area: int = 1000, only_max: bool = False,
                     text_color: Tuple[int, int, int] = (255, 0, 0)):
     """
     The function finds objects by color mask and displays a frame with label on the image.
@@ -75,8 +76,9 @@ def draw_rect_frame(img: np.array, lower: Tuple[int, int, int], upper: Tuple[int
     # cv2.imshow('dilated', dilated)
 
 
-def draw_ellipse_frame(img: np.array, lower: Tuple[int, int, int], upper: Tuple[int, int, int], label: str = "",
-                       iterations: int = 1, blur_strength: int = 5, min_area: int = 1000, only_max: bool = False,
+def draw_ellipse_frame(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0),
+                       upper: Tuple[int, int, int] = (255, 255, 255), label: str = "",
+                       iterations: int = 1, blur_strength: int = 0, min_area: int = 1000, only_max: bool = False,
                        text_color: Tuple[int, int, int] = (255, 0, 0)):
     """
         The function finds objects by color mask and displays a circumscribed ellipse with label on the image.

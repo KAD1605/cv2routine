@@ -34,7 +34,7 @@ def img_prep(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0), upper: Tupl
     mask = cv2.inRange(hsv, lower, upper)
 
     # Close fuzzy contours by creating ellipses on the contour ends and dilate them.
-    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (10, 10))
+    kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
     dilated = cv2.dilate(mask, kernel, iterations=iterations)
 
     # Find all contours on image.
