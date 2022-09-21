@@ -4,8 +4,8 @@ import numpy as np
 from typing import Tuple
 
 
-def img_prep(img: np.array, lower: Tuple[int, int, int], upper: Tuple[int, int, int],
-             iterations: int, blur_strength: int):
+def img_prep(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0), upper: Tuple[int, int, int] = (255, 255, 255),
+             iterations: int = 1, blur_strength: int = 0):
     """
     Prepare image. Apply mask, blur and dilation.
 

@@ -15,7 +15,6 @@ except FileNotFoundError:
     LONG_DESCRIPTION = SHORT_DESCRIPTION
 
 setup(install_requires=[
-    "setuptools==65.3.0",
     "opencv-python==4.6.0.66",
     "numpy==1.23.3",
 ],
@@ -26,7 +25,7 @@ setup(install_requires=[
     long_description_content_type='text/markdown',
     author="Klinovitskij Andrey",
     author_email="adk160501@gmail.com",
-    url="",
+    url="https://github.com/KAD1605/cv2routine",
     license="MIT",
     packages=['cv2routine'],
     zip_safe=False)
