@@ -135,6 +135,7 @@ For all examples, one image is used, which contains a completely red "t", a blue
     :alt: Initial image
 
 ----------------
+
 By increasing the minimum area of the contours, some small contours can be removed:
 
 .. code-block:: python
@@ -162,6 +163,7 @@ By increasing the minimum area of the contours, some small contours can be remov
     :alt: Min area = 10
 
 ----------------
+
 By setting the parameter "only_max" to True, only the largest contour will be detected. Set it to "True" for the last example and get:
 
 .. code-block:: python
@@ -176,6 +178,7 @@ By setting the parameter "only_max" to True, only the largest contour will be de
     :alt: Only max = True
 
 ----------------
+
 By setting the parameter "label" and "text_color", you can add a label to the frame and change color of the text and frame:
 
 .. code-block:: python
@@ -190,6 +193,7 @@ By setting the parameter "label" and "text_color", you can add a label to the fr
     :alt: Label and text color
 
 ----------------
+
 Example of complex settings for displaying thin contours:
 
 .. code-block:: python
