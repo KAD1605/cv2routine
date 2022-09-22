@@ -45,7 +45,7 @@ If you input only picture, then it will completely satisfy the HSV range [0, 0, 
 
     transform.img_prep(frame)
 
-.. image:: ./docs/Images/img_prep/1.png
+.. image:: ./Images/img_prep/1.png
     :width: 700px
     :align: center
     :alt: Full HSV range
@@ -59,7 +59,7 @@ By changing the range of the frame for the filter, you can choose which part of 
     transform.img_prep(frame, (100, 0, 0), (255, 255, 255))
     transform.img_prep(frame, (0, 100, 100), (155, 255, 255))
 
-.. image:: ./docs/Images/img_prep/2.png
+.. image:: ./Images/img_prep/2.png
     :width: 700px
     :align: center
     :alt: Part of the HSV range
@@ -73,7 +73,7 @@ By increasing the blur strength, you can achieve smoother borders and remove noi
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 0, 0)
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 0, 10)
 
-.. image:: ./docs/Images/img_prep/3.png
+.. image:: ./Images/img_prep/3.png
     :width: 700px
     :align: center
     :alt: Blur strength
@@ -88,10 +88,12 @@ By increasing the number of iterations, you can close badly visible contours
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 1, 0)
     transform.img_prep(frame, (1, 0, 0), (255, 255, 255), 5, 0)
 
-.. image:: ./docs/Images/img_prep/4.png
+.. image:: ./Images/img_prep/4.png
     :width: 700px
     :align: center
     :alt: Iterations
+
+----------------
 
 2. figures
 *******
@@ -125,7 +127,83 @@ Returns:
 
 Examples
 ~~~~~~~~
-WIP
+For all examples, one image is used, which contains a completely red "t", a blue in red stripe "e" with a red outline, a green in blue stripe "s" with a red outline, and a blue in red stripe "t" with a red outline (How the parameters "low", "high", "iterations" and "blur_strength" affect you can read in paragraph 1.1. img_prep()):
+
+.. image:: ./Images/draw_rect_frame/contours.png
+    :width: 700px
+    :align: center
+    :alt: Initial image
+
+----------------
+By increasing the minimum area of the contours, some small contours can be removed:
+
+.. code-block:: python
+
+    figures.draw_rect_frame(img, (173, 82, 213), (180, 235, 255), "", 0, 0, 1000, False, (30, 255, 100))
+    figures.draw_rect_frame(img2, (56, 194, 162), (80, 229, 229), "", 0, 0, 1000, False, (30, 255, 100))
+    figures.draw_rect_frame(img3, (118, 194, 177), (175, 255, 255), "", 0, 0, 1000, False, (30, 255, 100))
+
+.. image:: ./Images/draw_rect_frame/1.png
+    :width: 700px
+    :align: center
+    :alt: Min area = 1000
+
+
+
+.. code-block:: python
+
+    figures.draw_rect_frame(img, (173, 82, 213), (180, 235, 255), "", 0, 0, 10, False, (30, 255, 100))
+    figures.draw_rect_frame(img2, (56, 194, 162), (80, 229, 229), "", 0, 0, 10, False, (30, 255, 100))
+    figures.draw_rect_frame(img3, (118, 194, 177), (175, 255, 255), "", 0, 0, 10, False, (30, 255, 100))
+
+.. image:: ./Images/draw_rect_frame/2.png
+    :width: 700px
+    :align: center
+    :alt: Min area = 10
+
+----------------
+By setting the parameter "only_max" to True, only the largest contour will be detected. Set it to "True" for the last example and get:
+
+.. code-block:: python
+
+    figures.draw_rect_frame(img, (173, 82, 213), (180, 235, 255), "", 0, 0, 10, True, (30, 255, 100))
+    figures.draw_rect_frame(img2, (56, 194, 162), (80, 229, 229), "", 0, 0, 10, True, (30, 255, 100))
+    figures.draw_rect_frame(img3, (118, 194, 177), (175, 255, 255), "", 0, 0, 10, True, (30, 255, 100))
+
+.. image:: ./Images/draw_rect_frame/3.png
+    :width: 700px
+    :align: center
+    :alt: Only max = True
+
+----------------
+By setting the parameter "label" and "text_color", you can add a label to the frame and change color of the text and frame:
+
+.. code-block:: python
+
+    figures.draw_rect_frame(img, (173, 82, 213), (180, 235, 255), "Red", 0, 0, 10, True, (255, 255, 0))
+    figures.draw_rect_frame(img2, (56, 194, 162), (80, 229, 229), "Green", 0, 0, 10, True, (255, 0, 255))
+    figures.draw_rect_frame(img3, (118, 194, 177), (175, 255, 255), "Blue", 0, 0, 10, True, (0, 255, 255))
+
+.. image:: ./Images/draw_rect_frame/4.png
+    :width: 700px
+    :align: center
+    :alt: Label and text color
+
+----------------
+Example of complex settings for displaying thin contours:
+
+.. code-block:: python
+
+    figures.draw_rect_frame(img, (173, 82, 213), (180, 235, 255), "Red", 1, 0, 10, False, (255, 255, 0))
+    figures.draw_rect_frame(img2, (173, 82, 213), (180, 235, 255), "Red", 2, 0, 100, True, (255, 255, 0))
+    figures.draw_rect_frame(img3, (173, 82, 213), (180, 235, 255), "Red", 4, 0, 1000, False, (255, 255, 0))
+
+.. image:: ./Images/draw_rect_frame/5.png
+    :width: 700px
+    :align: center
+    :alt: Complex settings
+
+----------------
 
 2.2. draw_ellipse_frame()
 =================

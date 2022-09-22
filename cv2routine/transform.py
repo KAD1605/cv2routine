@@ -25,10 +25,11 @@ def img_prep(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0), upper: Tupl
     :rtype: tuple of 3 numpy.array
     """
     # Blur image to remove noise.
-    blur_img = cv2.GaussianBlur(img, (15, 15), blur_strength)
+    if blur_strength > 0:
+        img = cv2.GaussianBlur(img, (blur_strength, blur_strength), 0)
 
     # Convert image to HSV color space.
-    hsv = cv2.cvtColor(blur_img, cv2.COLOR_BGR2HSV)
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     # Create mask for color in range.
     mask = cv2.inRange(hsv, lower, upper)

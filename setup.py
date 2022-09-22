@@ -28,4 +28,5 @@ setup(install_requires=[
     url="https://github.com/KAD1605/cv2routine",
     license="MIT",
     packages=['cv2routine'],
+    keywords=['opencv', 'cv2', 'routine', 'image processing', 'computer vision', 'cv2routine'],
     zip_safe=False)
