@@ -42,7 +42,6 @@ def img_prep(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0), upper: Tupl
     contours, hierarchy = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     return dilated, contours, hierarchy
 
-фф
 def find_center(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0),
                    upper: Tuple[int, int, int] = (255, 255, 255),
                    iterations: int = 1, blur_strength: int = 0, x_range: Tuple[int, int] = (0, 0),
