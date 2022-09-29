@@ -19,7 +19,7 @@ setup(install_requires=[
     "numpy",
 ],
     name='cv2routine',
-    version='0.0.2',
+    version='0.0.3',
     description=SHORT_DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
