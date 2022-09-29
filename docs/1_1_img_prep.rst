@@ -10,7 +10,7 @@ Usage
     img_prep(img, low, high, iterations, blur_strength)
 
 Parameters:
-    * **img**: image to be processed. It must be a numpy array;
+    * **img**: image to be processed. Must be a numpy array;
     * **low**: lower color range in HSV color space. Default is tuple (0, 0, 0). Must be a tuple of 3 integers;
     * **high**: upper color range in HSV color space. Default is tuple (255, 255, 255). Must be a tuple of 3 integers;
     * **iterations**: number of iterations for the morphological transformation. Default is 1. Must be an integer;

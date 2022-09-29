@@ -18,6 +18,7 @@ This module contains functions that transform images.
     :caption: Transform
 
     1_1_img_prep.rst
+    1_2_find_center.rst
 
 
 2. figures
@@ -28,8 +29,8 @@ This module contains functions that create frame on the image.
     :maxdepth: 2
     :caption: Figures
 
-    2_1_draw_rect_frame
-    2_2_draw_ellipse_frame
+    2_1_draw_rect_frame.rst
+    2_2_draw_ellipse_frame.rst
 
 
 

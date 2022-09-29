@@ -42,10 +42,11 @@ def img_prep(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0), upper: Tupl
     contours, hierarchy = cv2.findContours(dilated, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     return dilated, contours, hierarchy
 
+
 def find_center(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0),
-                   upper: Tuple[int, int, int] = (255, 255, 255),
-                   iterations: int = 1, blur_strength: int = 0, x_range: Tuple[int, int] = (0, 0),
-                   y_range: Tuple[int, int] = (0, 0)):
+                upper: Tuple[int, int, int] = (255, 255, 255),
+                iterations: int = 1, blur_strength: int = 0, x_range: Tuple[int, int] = (0, 0),
+                y_range: Tuple[int, int] = (0, 0)):
     """
     The function finds objects by color mask and displays a frame with label on the image.
 
@@ -54,15 +55,21 @@ def find_center(img: np.array, lower: Tuple[int, int, int] = (0, 0, 0),
     :param upper: upper bound of color to search for (HSV).
     :param iterations: number of iterations to dilate image (increase to find smaller contours but accuracy decreases).
     :param blur_strength: strength of blur to apply to image.
+    :param x_range:
+    :param y_range:
 
     :type img: numpy.array
     :type lower: tuple of 3 int
     :type upper: tuple of 3 int
     :type iterations: int
     :type blur_strength: int
+    :type x_range: tuple of 2 int
+    :type y_range: tuple of 2 int
 
-    :return: image with frame and label, dilated image after mask and blur.
-    :rtype: tuple of 2 numpy.array
+    :return: True if object found, False otherwise. If True, center of object, if False, return (0, 0), also returns piece of image in x-y range.
+    :rtype: bool
+    :rtype: tuple of 2 int
+    :rtype: numpy.array
     """
     # Prepare image for contour search.
     img = img[x_range[0]:x_range[1], y_range[0]:y_range[1]]
